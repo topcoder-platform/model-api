@@ -26,4 +26,4 @@ _.each(routes, (route, routeDef) => {
 app.use(errorHandler)
 
 // Start the API
-app.listen(config.PORT, () => console.log(`API is running on port ${config.PORT}`))
+app.listen(config.BUS_API_SERVER_PORT, () => console.log(`API is running on port ${config.BUS_API_SERVER_PORT}`))

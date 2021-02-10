@@ -10,7 +10,6 @@ const logger = require('./src/common/logger')
 const HttpStatus = require('http-status-codes')
 const bodyParser = require('body-parser')
 const _ = require('lodash')
-const winston = require('winston')
 const helper = require('./src/common/helper')
 const routes = require('./src/routes')
 const swaggerUi = require('swagger-ui-express')
@@ -20,7 +19,7 @@ const swaggerDocument = YAML.load('./docs/swagger.yaml')
 const app = express()
 const http = require('http').Server(app)
 
-app.set('port', config.WEB_SERVER_PORT)
+app.set('port', config.DYNAMODB_SERVER_PORT)
 
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
@@ -46,7 +45,7 @@ _.each(routes, (verbs, url) => {
       actions = actions.concat(def.middleware)
     }
     actions.push(method)
-    winston.info(`API : ${verb.toLocaleUpperCase()} ${config.API_VERSION}${url}`)
+    logger.info(`API : ${verb.toLocaleUpperCase()} ${config.API_VERSION}${url}`)
     apiRouter[verb](`${config.API_VERSION}${url}`, helper.autoWrapExpress(actions))
   })
 })
@@ -91,7 +90,7 @@ app.use((err, req, res, next) => {
 })
 
 http.listen(app.get('port'), () => {
-  winston.info(`Express server listening on port ${app.get('port')}`)
+  logger.info(`Express server listening on port ${app.get('port')}`)
 })
 
 module.exports = app

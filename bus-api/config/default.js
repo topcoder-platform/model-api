@@ -1,7 +1,7 @@
 module.exports = {
   LOG_LEVEL: process.env.LOG_LEVEL || 'debug',
-  API_VERSION: process.env.API_VERSION || 'v5',
-  PORT: process.env.PORT || 3000,
+  API_VERSION: process.env.API_VERSION || 'v5/model-api/bus-api',
+  BUS_API_SERVER_PORT: process.env.BUS_API_SERVER_PORT || 2001,
 
   // used to get M2M token
   AUTH0_URL: process.env.AUTH0_URL,
@@ -17,5 +17,4 @@ module.exports = {
   ENTITY_CREATE_TOPIC: process.env.ENTITY_CREATE_TOPIC || 'test.new.bus.events',
   EVENT_ORIGINATOR: process.env.EVENT_ORIGINATOR || 'bus-api-template',
   EVENT_MIME_TYPE: process.env.EVENT_MIME_TYPE || 'application/json'
-
 }

@@ -6,20 +6,21 @@ const helper = require('../common/helper')
 const logger = require('../common/logger')
 const errors = require('../common/errors')
 
+let checksRun = 0
+
 /**
  * Check health.
  * @returns {Object} the health check result
  */
 async function check () {
+  checksRun += 1
   // check DB connection by a simple query
   try {
     await helper.scan(config.AMAZON.DYNAMODB_CAT_TABLE)
   } catch (e) {
     throw new errors.ServiceUnavailableError(`DynamoDB is unavailable, ${e.message}`)
   }
-
-  // ok
-  return { checksRun: 1 }
+  return { checksRun }
 }
 
 module.exports = {

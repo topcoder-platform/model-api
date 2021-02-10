@@ -1,0 +1,16 @@
+{
+  "name": "model-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-bus-api": "cd bus-api && npm i && npm run start",
+    "build-dynamodb": "cd dynamodb && npm i && npm run start",
+    "start": "concurrently \"npm run build-bus-api\" \"npm run build-dynamodb\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

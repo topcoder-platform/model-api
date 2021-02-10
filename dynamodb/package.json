@@ -1,7 +1,7 @@
 {
-  "name": "modelapi",
+  "name": "model-api-dynamodb",
   "version": "1.0.0",
-  "description": "model api",
+  "description": "model api demonstating communication with dynamodb",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

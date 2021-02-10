@@ -22,7 +22,7 @@ This folder contains the template for interacting with Bus API. You can go throu
 
 - LOG_LEVEL: the log level, default is 'debug'
 - API_VERSION: the API version, default is v5
-- PORT: the server port, default is 3000
+- BUS_API_SERVER_PORT: the server port, default is 2002
 - AUTH0_URL: AUTH0 URL, used to get M2M token
 - AUTH0_PROXY_SERVER_URL: AUTH0 proxy server URL, used to get M2M token
 - AUTH0_AUDIENCE: AUTH0 audience, used to get M2M token

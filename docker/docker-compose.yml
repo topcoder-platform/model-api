@@ -1,12 +1,12 @@
 version: '3'
 services:
-  model-api-dynamodb:
-    image: model-api-dynamodb:latest
+  model-api:
+    image: model-api:latest
     build:
       context: ../
       dockerfile: docker/Dockerfile
     env_file:
       - api.env
     ports:
+      - 2001:2001
       - 2002:2002
-    network_mode: "host"

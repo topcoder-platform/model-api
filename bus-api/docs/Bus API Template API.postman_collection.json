@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/entities",
+					"raw": "{{URL}}/v5/model-api/bus-api/entities",
 					"host": [
 						"{{URL}}"
 					],

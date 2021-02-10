@@ -18,7 +18,7 @@ This folder contains the template for interacting with Dynamodb. You can go thro
 Configuration for the application is at `config/default.js` and `config/production.js`. The following parameters can be set in config files or in env variables:
 
 - LOG_LEVEL: the log level
-- PORT: the server port
+- DYNAMODB_SERVER_PORT: the server port
 - API_VERSION: the API version
 - AMAZON.AWS_ACCESS_KEY_ID: The Amazon certificate key to use when connecting. For local dynamodb you can set fake value.
 - AMAZON.AWS_SECRET_ACCESS_KEY: The Amazon certificate access key to use when connecting. For local dynamodb you can set fake value.
@@ -63,7 +63,7 @@ in config file or via environment variables. You may create tables using below `
 - To delete DynamoDB table if needed `npm run delete-tables` **WARNING: This deletes all tables**
 - To create DynamoDB table if needed `npm run create-tables`
 - Start app `npm start`
-- App is running at `http://localhost:3000`
+- App is running at `http://localhost:2002`
 
 ### Load/Clean Data
 
